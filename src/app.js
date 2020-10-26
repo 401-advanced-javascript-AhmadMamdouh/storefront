@@ -1,16 +1,21 @@
 import React from 'react';
-import Categories from './components/categories';
-import Products from './components/products';
 import Header from './components/header';
 import Footer from './components/footer';
+import Categories from './components/categories.js';
+import Products from './components/products.js';
 
-export default props => {
+
+function App() {
   return (
     <>
       <Header />
-      <Categories />
-      <Products />
+      <main style={{height: 150 + 'vh'}}>
+        <Categories />
+        <Products />
+      </main>
       <Footer />
     </>
-  );
+  )
 }
+
+export default App;

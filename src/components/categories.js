@@ -1,32 +1,33 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { changeActiveCategory } from '../store/items.js';
+import {AppBar, Tabs, Tab} from '@material-ui/core';
 
-import { changeActiveCategory } from '../store/categories'
-
-const Categories = props => {
-  return (
-    <>
-      <h2>Categories - Click to change Active Category</h2>
-      <ul>
-        {props.categories.map(category =>
-          <li
-            key={category.name}
-            onClick={() => props.changeActiveCategory(category.name)}
-          >
-            {props.active === category.name && '*'}
-            {category.displayName}
-          </li>
-        )}
-      </ul>
-    </>
-  )
+function Categories(props) {
+    return (
+        
+        <section>
+            <AppBar position="static">
+                <Tabs  aria-label="simple tabs example">
+                {
+                    props.items.categories.map((category) => {
+                        return (
+                            <Tab label={category.displayName} key={category.name} onClick={() => props.changeActiveCategory(category.name)}>
+                                {category.displayName}
+                            </Tab>
+                        )
+                    })
+                }
+                </Tabs>
+            </AppBar>
+        </section>
+    )
 }
 
-const mapStateToProps = store => ({
-  categories: store.category.categories,
-  active: store.category.activeCategory,
-})
+const mapStateToProps = (state) => {
+    return { items: state.items };
+}
 
-const mapDispatchToProps = { changeActiveCategory };
+const mapDispatchToProps = { changeActiveCategory }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Categories);
+export default connect(mapStateToProps, mapDispatchToProps)(Categories)

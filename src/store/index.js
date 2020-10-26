@@ -1,15 +1,11 @@
-import { createStore, combineReducers } from 'redux';
+import {createStore, combineReducers} from 'redux';
+import {composeWithDevTools} from 'redux-devtools-extension';
+import items from './items.js';
 
-import { composeWithDevTools } from 'redux-devtools-extension';
-
-import category from './categories';
-import product from './products';
-console.log(category)
-
-let reducers = combineReducers({ category , product });
+const rootReducer = combineReducers({items})
 
 const store = () => {
-  return createStore(reducers, composeWithDevTools());
-};
+    return createStore(rootReducer, composeWithDevTools());
+}
 
-export default store()
+export default store();
