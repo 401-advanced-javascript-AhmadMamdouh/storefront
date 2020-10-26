@@ -6,16 +6,23 @@ import Products from './components/products.js';
 
 
 function App() {
-  return (
-    <>
-      <Header />
-      <main style={{height: 150 + 'vh'}}>
-        <Categories />
-        <Products />
-      </main>
-      <Footer />
-    </>
-  )
+    const styles = {
+        height: '990px',
+        display: 'flex',
+        flexDirection: 'row',
+        width: '100%',
+        justifyContent: 'space-around',
+    };
+    return (
+        <>
+            <Header />
+            <Categories />
+            <main style={styles}>
+                <Products />
+            </main>
+            <Footer />
+        </>
+    )
 }
 
 export default App;
