@@ -1,9 +1,5 @@
 const initialState = {
-    categories: [
-      { name: 'electronics', displayName: 'Elecronics' },
-      { name: 'food', displayName: 'Food' },
-      { name: 'clothing', displayName: 'Clothing' },
-    ],
+    categories: [],
     activeCategory: 'food',
   };
   
@@ -12,6 +8,10 @@ const initialState = {
     switch (type) {
     case 'change':
       return { categories: state.categories, activeCategory: payload };
+    case 'GETCAT':
+      const obj = {categories: state.categories , activeCategory: 'food'};
+      console.log('obj<<>>>',obj);
+      return obj;
     default:
       return state;
     }

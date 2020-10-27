@@ -2,7 +2,7 @@
   "name": "storefront",
   "version": "1.0.0",
   "description": "Project: Storefront",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/401-advanced-javascript-AhmadMamdouh/storefront.git"
@@ -24,7 +24,9 @@
     "react-redux": "^7.2.1",
     "react-scripts": "^4.0.0",
     "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
+    "superagent": "^6.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
