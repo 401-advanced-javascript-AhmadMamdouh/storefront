@@ -48,6 +48,7 @@ export default (state = initialState, action) => {
         return product;
       }
     });
+    
 
     console.log('newState>>>>',newState);
     return {results: newState};
